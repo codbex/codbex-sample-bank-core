@@ -7,7 +7,8 @@ const repository = new AccountRepository();
 
 const accountId = repository.create({
     customerId: 1,
-    iban: UUID.random().substring(0, 34)
+    iban: UUID.random().substring(0, 34),
+    balance: parseInt('' + Math.random() * 1000)
 });
 
 const accountEntity = repository.findById(accountId);
@@ -17,14 +18,15 @@ if (!accountEntity) {
 }
 
 const allAccounts = repository.findAll();
+
 const filteredAccounts = repository.findAll({
-    conditions: [
-        {
-            operator: Operator.GE,
-            propertyName: 'balance',
-            value: 10000
-        }
-    ],
+    // conditions: [
+    //     {
+    //         operator: Operator.GE,
+    //         propertyName: 'balance',
+    //         value: 10000
+    //     }
+    // ],
     sorts: [
         {
             direction: Direction.DESC,
@@ -33,10 +35,17 @@ const filteredAccounts = repository.findAll({
     ],
 })
 
+const JsonHelper = Java.type("org.eclipse.dirigible.components.base.helpers.JsonHelper");
+const QueryOptions = Java.type("org.eclipse.dirigible.components.data.store.QueryOptions");
+
+const result = JsonHelper.fromJson(JSON.stringify({}), QueryOptions.class);
+
+Response.println(`Result = ${result}`);
+Response.println(`-------`);
 Response.println(`Account id = ${accountId}`);
 Response.println(`-------`);
 Response.println(`Account entity = ${JSON.stringify(accountEntity, null, 4)}`);
 Response.println(`-------`);
 Response.println(`All accounts count = ${allAccounts.length}`);
 Response.println(`-------`);
-Response.println(`Filtered Accounts (${filteredAccounts.length}) = ${JSON.stringify(filteredAccounts, null, 4)}`);
+Response.println(`Filtered Accounts (${filteredAccounts.length}) = ${JSON.stringify(filteredAccounts.map(e => { return { iban: e.iban, balance: e.balance } }), null, 4)}`);
