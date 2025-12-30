@@ -7,8 +7,6 @@ import { TransactionRepository } from './gen/bankCore/data/accounts/TransactionR
 import { DocumentRepository } from './gen/bankCore/data/documents/DocumentRepository';
 import { Files } from '@aerokit/sdk/io';
 
-// TODO: approved ('BIT' -> boolean with default value 0???) is not working!
-
 const customerRepo = new CustomerRepository();
 
 /**
@@ -129,7 +127,6 @@ const tx1 = transactionRepo.create({
     amount: 250.00,
     direction: 'D',
     fee: 1.25,
-    // approved: 1
     approved: true
 });
 
@@ -142,8 +139,7 @@ const tx2 = transactionRepo.create({
     amount: 2000.00,
     direction: 'C',
     // fee defaults to 0
-    // approved defaults to 0
-    // approved: false
+    // approved defaults to false
 });
 
 /**
@@ -151,7 +147,6 @@ const tx2 = transactionRepo.create({
  */
 const approvedTransactions = transactionRepo.findAll({
     conditions: [
-        // { operator: Operator.EQ, propertyName: 'approved', value: 1 }
         { operator: Operator.EQ, propertyName: 'approved', value: true }
     ],
     sorts: [
