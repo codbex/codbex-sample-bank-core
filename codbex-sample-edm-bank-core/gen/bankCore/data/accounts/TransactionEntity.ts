@@ -74,10 +74,10 @@ export class TransactionEntity {
     @Column({
         name: 'TRANSACTION_APPROVED',
         type: 'boolean',
-        defaultValue: `0`,
+        defaultValue: `false`,
         nullable: true,
     })
-    public approved?: unknown;
+    public approved?: boolean;
 
     @Documentation('createdOn')
     @Column({

@@ -473,7 +473,7 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
-                        "dataDefaultValue": "0",
+                        "dataDefaultValue": "false",
                         "dataName": "TRANSACTION_APPROVED",
                         "dataNullable": "true",
                         "dataType": "BIT",

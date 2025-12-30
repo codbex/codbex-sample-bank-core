@@ -190,7 +190,7 @@
                     },
                     {
                         "type": "BIT",
-                        "defaultValue": "0",
+                        "defaultValue": "false",
                         "nullable": true,
                         "name": "TRANSACTION_APPROVED"
                     },

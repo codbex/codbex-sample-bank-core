@@ -1134,7 +1134,7 @@
           "inputRule": ""
         },
         {
-          "dataDefaultValue": "0",
+          "dataDefaultValue": "false",
           "dataName": "TRANSACTION_APPROVED",
           "dataNullable": true,
           "dataType": "BIT",
@@ -1153,8 +1153,8 @@
           "isCalculatedProperty": false,
           "widgetLabel": "approved",
           "widgetDropdownUrl": "",
-          "dataTypeJava": "",
-          "dataTypeTypescript": "unknown",
+          "dataTypeJava": "boolean",
+          "dataTypeTypescript": "boolean",
           "inputRule": ""
         },
         {

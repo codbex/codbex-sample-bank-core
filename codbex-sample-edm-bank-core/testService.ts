@@ -143,7 +143,7 @@ const tx2 = transactionRepo.create({
     direction: 'C',
     // fee defaults to 0
     // approved defaults to 0
-    approved: false
+    // approved: false
 });
 
 /**
