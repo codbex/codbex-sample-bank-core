@@ -9,6 +9,7 @@ class CustomerDataService {
         const taskId = ctx.queryParameters['taskId'];
 
         const idCardData = Tasks.getVariable(taskId, 'idCardData');
+        const documentPath = Tasks.getVariable(taskId, 'documentPath');
 
         const firstName = this.getValue(idCardData, 'Име') ?? this.getValue(idCardData, 'Name');
         const lastName = this.getValue(idCardData, 'Фамилия') ?? this.getValue(idCardData, `Father's name`);
@@ -21,7 +22,8 @@ class CustomerDataService {
             firstName: firstName,
             lastName: lastName,
             dateOfBirth: dateOfBirth ? this.parseDDMMYYYY(dateOfBirth) : undefined,
-            profileNotes: `Personal No: ${personalNo}\nDocument number: ${documentNumber}\nSex: ${sex}`
+            profileNotes: `Personal No: ${personalNo}\nDocument number: ${documentNumber}\nSex: ${sex}`,
+            documentPath: documentPath
         };
     }
 

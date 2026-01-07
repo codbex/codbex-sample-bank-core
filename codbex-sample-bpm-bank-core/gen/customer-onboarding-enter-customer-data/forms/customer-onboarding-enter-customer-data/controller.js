@@ -16,6 +16,13 @@ angular.module('forms', ['blimpKit', 'platformView', 'platformLocale']).controll
         $scope.model.lastName = customerData.lastName;
         $scope.model.dateOfBirth = new Date(customerData.dateOfBirth);
         $scope.model.profileNotes = customerData.profileNotes;
+    
+        const img = document.querySelector('.bk-contain-image');
+        img.src = `/services/js/documents/api/documents.js/preview?path=${customerData.documentPath}`;
+        setTimeout(() => {
+            img.height = 400;
+        }, 2000)
+    
     }, (error) => {
         console.error(error);
     });
@@ -27,12 +34,11 @@ angular.module('forms', ['blimpKit', 'platformView', 'platformLocale']).controll
             dateOfBirth: $scope.model.dateOfBirth,
             profileNotes: $scope.model.profileNotes,
         }).then((response) => {
-                alert(`Customer created successfully`);
-                $scope.model = {};
-            }, (response) => {
-                alert(`Failed to create new customer: ${response.data.message}`);
-            }
-        );
+            alert(`Customer created successfully`);
+            $scope.model = {};
+        }, (response) => {
+            alert(`Failed to create new customer: ${response.data.message}`);
+        });
     }
 
 });
