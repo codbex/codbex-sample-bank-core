@@ -16,13 +16,6 @@ angular.module('forms', ['blimpKit', 'platformView', 'platformLocale']).controll
         $scope.model.lastName = customerData.lastName;
         $scope.model.dateOfBirth = new Date(customerData.dateOfBirth);
         $scope.model.profileNotes = customerData.profileNotes;
-        // $scope.reports = response.data.map(e => ({
-        //     value: JSON.stringify({
-        //         reportId: e.reportId,
-        //         statementTypeId: e.statementTypeId
-        //     }),
-        //     text: `${e.reportFilepath} | ${e.statementTypeName}`
-        // }));
     }, (error) => {
         console.error(error);
     });
@@ -35,6 +28,7 @@ angular.module('forms', ['blimpKit', 'platformView', 'platformLocale']).controll
             profileNotes: $scope.model.profileNotes,
         }).then((response) => {
                 alert(`Customer created successfully`);
+                $scope.model = {};
             }, (response) => {
                 alert(`Failed to create new customer: ${response.data.message}`);
             }

@@ -57,7 +57,7 @@ angular.module('forms', ['blimpKit', 'platformView', 'angularFileUpload']).contr
             type: 'positive'
         });
 
-        $http.post('/services/ts/codbex-sample-dashboard-bank-core/customer-onboarding/service.ts', {
+        $http.post('/services/ts/codbex-sample-bpm-bank-core/api/customerOnboarding.ts', {
             documentPath: documentPath,
         }).then((response) => {
             Notifications.show({

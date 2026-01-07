@@ -10,14 +10,30 @@ class CustomerDataService {
 
         const idCardData = Tasks.getVariable(taskId, 'idCardData');
 
+        const firstName = this.getValue(idCardData, 'Име') ?? this.getValue(idCardData, 'Name');
+        const lastName = this.getValue(idCardData, 'Фамилия') ?? this.getValue(idCardData, `Father's name`);
+        const dateOfBirth = this.getValue(idCardData, 'Date of birth');
+        const personalNo = this.getValue(idCardData, 'Personal No');
+        const documentNumber = this.getValue(idCardData, 'Document number');
+        const sex = this.getValue(idCardData, 'Пол') ?? this.getValue(idCardData, 'Sex');
+
         return {
-            firstName: idCardData['Име'] ?? idCardData['Name'],
-            lastName: idCardData['Фамилия'] ?? idCardData[`Father's name`],
-            dateOfBirth: idCardData['Дата Ha раждане/Date of birth'] ? new Date(idCardData['Дата Ha раждане/Date of birth']) : undefined,
-            profileNotes: `Personal No: ${idCardData['ETH/Personal No']}\nDocument number: ${idCardData['№ Ha документа / Document number']}\nSex: ${idCardData['Пол/Sеx']}`
+            firstName: firstName,
+            lastName: lastName,
+            dateOfBirth: dateOfBirth ? this.parseDDMMYYYY(dateOfBirth) : undefined,
+            profileNotes: `Personal No: ${personalNo}\nDocument number: ${documentNumber}\nSex: ${sex}`
         };
     }
 
+    private getValue(objectData: Record<string, string>, key: string): string | undefined {
+        const keyFound = Object.keys(objectData).find(e => e.includes(key));
+        return keyFound ? objectData[keyFound] : undefined;
+    }
+
+    private parseDDMMYYYY(dateStr: string): Date {
+        const [day, month, year] = dateStr.split('.').map(Number);
+        return new Date(year, month - 1, day);
+    }
 
     @Post('/')
     public submitCustomerData(customerData: any, ctx: any) {

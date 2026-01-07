@@ -12,7 +12,8 @@ try {
         throw new Error(`Provide the 'DIRIGIBLE_S3_BUCKET' environment variable`);
     }
 
-    const result = TextractUtils.parseDocument(bucketName, 'default-tenant/BankCore/id-card.png');
+    const documentPath = Process.getExecutionContext().getVariable('documentPath');
+    const result = TextractUtils.parseDocument(bucketName, `default-tenant/${documentPath}`);
     Process.getExecutionContext().setVariable('idCardData', result);
 
     tracer.complete('ID Card data extracted successfully.');

@@ -33,6 +33,7 @@ angular.module('forms', ['blimpKit', 'platformView', 'platformLocale']).controll
             initialBalance: $scope.model.initialBalance,
         }).then((response) => {
                 alert(`Account created successfully`);
+                $scope.model = {};
             }, (response) => {
                 alert(`Failed to create new account: ${response.data.message}`);
             }
