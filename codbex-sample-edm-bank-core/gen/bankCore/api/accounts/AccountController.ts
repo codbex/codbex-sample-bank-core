@@ -1,9 +1,8 @@
 import { Controller, Get, Post, Put, Delete, Documentation, request, response } from '@aerokit/sdk/http'
-import { Injected, Inject } from '@aerokit/sdk/component'
+import { HttpUtils } from "@aerokit/sdk/http/utils";
+import { ValidationError } from '@aerokit/sdk/http/errors'
 import { Options } from '@aerokit/sdk/db'
 import { Extensions } from "@aerokit/sdk/extensions"
-import { ValidationError } from '@aerokit/sdk/http/errors'
-import { HttpUtils } from "@aerokit/sdk/http/utils";
 import { AccountRepository } from '../../data/accounts/AccountRepository'
 import { AccountEntity } from '../../data/accounts/AccountEntity'
 
@@ -11,11 +10,9 @@ const validationModules = await Extensions.loadExtensionModules('codbex-sample-e
 
 @Controller
 @Documentation('codbex-sample-edm-bank-core - Account Controller')
-@Injected()
 class AccountController {
 
-    @Inject('AccountRepository')
-    private readonly repository!: AccountRepository;
+    private readonly repository = new AccountRepository();
 
     @Get('/')
     @Documentation('Get All Account')
@@ -23,7 +20,8 @@ class AccountController {
         try {
             const options: Options = {
                 limit: ctx.queryParameters["$limit"] ? parseInt(ctx.queryParameters["$limit"]) : 20,
-                offset: ctx.queryParameters["$offset"] ? parseInt(ctx.queryParameters["$offset"]) : 0
+                offset: ctx.queryParameters["$offset"] ? parseInt(ctx.queryParameters["$offset"]) : 0,
+                language: request.getLocale().slice(0, 2)
             };
 
             return this.repository.findAll(options);
@@ -38,7 +36,7 @@ class AccountController {
     public create(entity: AccountEntity): AccountEntity {
         try {
             this.validateEntity(entity);
-            entity.id = this.repository.create(entity);
+            entity.id = this.repository.create(entity) as any;
             response.setHeader('Content-Location', '/services/ts/codbex-sample-edm-bank-core/gen/bankCore/api/accounts/AccountService.ts/' + entity.id);
             response.setStatus(response.CREATED);
             return entity;
@@ -56,7 +54,7 @@ class AccountController {
         } catch (error: any) {
             this.handleError(error);
         }
-        return { count: -1 };
+        return undefined as any;
     }
 
     @Post('/count')
@@ -67,7 +65,7 @@ class AccountController {
         } catch (error: any) {
             this.handleError(error);
         }
-        return { count: -1 };
+        return undefined as any;
     }
 
     @Post('/search')
@@ -86,8 +84,8 @@ class AccountController {
     public getById(_: any, ctx: any): AccountEntity {
         try {
             const id = parseInt(ctx.pathParameters.id);
-            const options: AccountEntityOptions = {
-                $language: request.getLocale().slice(0, 2)
+            const options: Options = {
+                language: request.getLocale().slice(0, 2)
             };
             const entity = this.repository.findById(id, options);
             if (entity) {
@@ -105,7 +103,8 @@ class AccountController {
     @Documentation('Update Account by id')
     public update(entity: AccountEntity, ctx: any): AccountEntity {
         try {
-            entity.id = ctx.pathParameters.id;
+            const id = parseInt(ctx.pathParameters.id);
+            entity.id = id;
             this.validateEntity(entity);
             this.repository.update(entity);
             return entity;
@@ -119,7 +118,7 @@ class AccountController {
     @Documentation('Delete Account by id')
     public deleteById(_: any, ctx: any): void {
         try {
-            const id = ctx.pathParameters.id;
+            const id = parseInt(ctx.pathParameters.id);
             const entity = this.repository.findById(id);
             if (entity) {
                 this.repository.deleteById(id);

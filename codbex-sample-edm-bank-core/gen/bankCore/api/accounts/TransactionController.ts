@@ -1,9 +1,8 @@
 import { Controller, Get, Post, Put, Delete, Documentation, request, response } from '@aerokit/sdk/http'
-import { Injected, Inject } from '@aerokit/sdk/component'
+import { HttpUtils } from "@aerokit/sdk/http/utils";
+import { ValidationError } from '@aerokit/sdk/http/errors'
 import { Options } from '@aerokit/sdk/db'
 import { Extensions } from "@aerokit/sdk/extensions"
-import { ValidationError } from '@aerokit/sdk/http/errors'
-import { HttpUtils } from "@aerokit/sdk/http/utils";
 import { TransactionRepository } from '../../data/accounts/TransactionRepository'
 import { TransactionEntity } from '../../data/accounts/TransactionEntity'
 
@@ -11,11 +10,9 @@ const validationModules = await Extensions.loadExtensionModules('codbex-sample-e
 
 @Controller
 @Documentation('codbex-sample-edm-bank-core - Transaction Controller')
-@Injected()
 class TransactionController {
 
-    @Inject('TransactionRepository')
-    private readonly repository!: TransactionRepository;
+    private readonly repository = new TransactionRepository();
 
     @Get('/')
     @Documentation('Get All Transaction')
@@ -23,7 +20,8 @@ class TransactionController {
         try {
             const options: Options = {
                 limit: ctx.queryParameters["$limit"] ? parseInt(ctx.queryParameters["$limit"]) : 20,
-                offset: ctx.queryParameters["$offset"] ? parseInt(ctx.queryParameters["$offset"]) : 0
+                offset: ctx.queryParameters["$offset"] ? parseInt(ctx.queryParameters["$offset"]) : 0,
+                language: request.getLocale().slice(0, 2)
             };
 
             let accountId = parseInt(ctx.queryParameters.accountId);
@@ -49,7 +47,7 @@ class TransactionController {
     public create(entity: TransactionEntity): TransactionEntity {
         try {
             this.validateEntity(entity);
-            entity.id = this.repository.create(entity);
+            entity.id = this.repository.create(entity) as any;
             response.setHeader('Content-Location', '/services/ts/codbex-sample-edm-bank-core/gen/bankCore/api/accounts/TransactionService.ts/' + entity.id);
             response.setStatus(response.CREATED);
             return entity;
@@ -67,7 +65,7 @@ class TransactionController {
         } catch (error: any) {
             this.handleError(error);
         }
-        return { count: -1 };
+        return undefined as any;
     }
 
     @Post('/count')
@@ -78,7 +76,7 @@ class TransactionController {
         } catch (error: any) {
             this.handleError(error);
         }
-        return { count: -1 };
+        return undefined as any;
     }
 
     @Post('/search')
@@ -97,8 +95,8 @@ class TransactionController {
     public getById(_: any, ctx: any): TransactionEntity {
         try {
             const id = parseInt(ctx.pathParameters.id);
-            const options: TransactionEntityOptions = {
-                $language: request.getLocale().slice(0, 2)
+            const options: Options = {
+                language: request.getLocale().slice(0, 2)
             };
             const entity = this.repository.findById(id, options);
             if (entity) {
@@ -116,7 +114,8 @@ class TransactionController {
     @Documentation('Update Transaction by id')
     public update(entity: TransactionEntity, ctx: any): TransactionEntity {
         try {
-            entity.id = ctx.pathParameters.id;
+            const id = parseInt(ctx.pathParameters.id);
+            entity.id = id;
             this.validateEntity(entity);
             this.repository.update(entity);
             return entity;
@@ -130,7 +129,7 @@ class TransactionController {
     @Documentation('Delete Transaction by id')
     public deleteById(_: any, ctx: any): void {
         try {
-            const id = ctx.pathParameters.id;
+            const id = parseInt(ctx.pathParameters.id);
             const entity = this.repository.findById(id);
             if (entity) {
                 this.repository.deleteById(id);

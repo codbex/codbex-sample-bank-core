@@ -1,9 +1,8 @@
 import { Controller, Get, Post, Put, Delete, Documentation, request, response } from '@aerokit/sdk/http'
-import { Injected, Inject } from '@aerokit/sdk/component'
+import { HttpUtils } from "@aerokit/sdk/http/utils";
+import { ValidationError } from '@aerokit/sdk/http/errors'
 import { Options } from '@aerokit/sdk/db'
 import { Extensions } from "@aerokit/sdk/extensions"
-import { ValidationError } from '@aerokit/sdk/http/errors'
-import { HttpUtils } from "@aerokit/sdk/http/utils";
 import { CustomerRepository } from '../../data/customers/CustomerRepository'
 import { CustomerEntity } from '../../data/customers/CustomerEntity'
 
@@ -11,11 +10,9 @@ const validationModules = await Extensions.loadExtensionModules('codbex-sample-e
 
 @Controller
 @Documentation('codbex-sample-edm-bank-core - Customer Controller')
-@Injected()
 class CustomerController {
 
-    @Inject('CustomerRepository')
-    private readonly repository!: CustomerRepository;
+    private readonly repository = new CustomerRepository();
 
     @Get('/')
     @Documentation('Get All Customer')
@@ -23,7 +20,8 @@ class CustomerController {
         try {
             const options: Options = {
                 limit: ctx.queryParameters["$limit"] ? parseInt(ctx.queryParameters["$limit"]) : 20,
-                offset: ctx.queryParameters["$offset"] ? parseInt(ctx.queryParameters["$offset"]) : 0
+                offset: ctx.queryParameters["$offset"] ? parseInt(ctx.queryParameters["$offset"]) : 0,
+                language: request.getLocale().slice(0, 2)
             };
 
             return this.repository.findAll(options);
@@ -38,7 +36,7 @@ class CustomerController {
     public create(entity: CustomerEntity): CustomerEntity {
         try {
             this.validateEntity(entity);
-            entity.id = this.repository.create(entity);
+            entity.id = this.repository.create(entity) as any;
             response.setHeader('Content-Location', '/services/ts/codbex-sample-edm-bank-core/gen/bankCore/api/customers/CustomerService.ts/' + entity.id);
             response.setStatus(response.CREATED);
             return entity;
@@ -56,7 +54,7 @@ class CustomerController {
         } catch (error: any) {
             this.handleError(error);
         }
-        return { count: -1 };
+        return undefined as any;
     }
 
     @Post('/count')
@@ -67,7 +65,7 @@ class CustomerController {
         } catch (error: any) {
             this.handleError(error);
         }
-        return { count: -1 };
+        return undefined as any;
     }
 
     @Post('/search')
@@ -86,8 +84,8 @@ class CustomerController {
     public getById(_: any, ctx: any): CustomerEntity {
         try {
             const id = parseInt(ctx.pathParameters.id);
-            const options: CustomerEntityOptions = {
-                $language: request.getLocale().slice(0, 2)
+            const options: Options = {
+                language: request.getLocale().slice(0, 2)
             };
             const entity = this.repository.findById(id, options);
             if (entity) {
@@ -105,7 +103,8 @@ class CustomerController {
     @Documentation('Update Customer by id')
     public update(entity: CustomerEntity, ctx: any): CustomerEntity {
         try {
-            entity.id = ctx.pathParameters.id;
+            const id = parseInt(ctx.pathParameters.id);
+            entity.id = id;
             this.validateEntity(entity);
             this.repository.update(entity);
             return entity;
@@ -119,7 +118,7 @@ class CustomerController {
     @Documentation('Delete Customer by id')
     public deleteById(_: any, ctx: any): void {
         try {
-            const id = ctx.pathParameters.id;
+            const id = parseInt(ctx.pathParameters.id);
             const entity = this.repository.findById(id);
             if (entity) {
                 this.repository.deleteById(id);
