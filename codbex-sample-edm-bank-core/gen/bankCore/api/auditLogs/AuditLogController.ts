@@ -3,7 +3,7 @@ import { HttpUtils } from "@aerokit/sdk/http/utils";
 import { ValidationError } from '@aerokit/sdk/http/errors'
 import { Options } from '@aerokit/sdk/db'
 import { Extensions } from "@aerokit/sdk/extensions"
-import { Injected, Inject } from '@aerokit/sdk/component'
+// import { Injected, Inject } from '@aerokit/sdk/component'
 import { AuditLogRepository } from '../../data/auditLogs/AuditLogRepository'
 import { AuditLogEntity } from '../../data/auditLogs/AuditLogEntity'
 
@@ -11,11 +11,12 @@ const validationModules = await Extensions.loadExtensionModules('codbex-sample-e
 
 @Controller
 @Documentation('codbex-sample-edm-bank-core - AuditLog Controller')
-@Injected()
+// @Injected()
 class AuditLogController {
 
-    @Inject('AuditLogRepository')
-    private readonly repository!: AuditLogRepository;
+    // @Inject('AuditLogRepository')
+    // private readonly repository!: AuditLogRepository;
+    private readonly repository = new AuditLogRepository();
 
     @Get('/')
     @Documentation('Get All AuditLog')

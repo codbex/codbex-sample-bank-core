@@ -3,7 +3,7 @@ import { HttpUtils } from "@aerokit/sdk/http/utils";
 import { ValidationError } from '@aerokit/sdk/http/errors'
 import { Options } from '@aerokit/sdk/db'
 import { Extensions } from "@aerokit/sdk/extensions"
-import { Injected, Inject } from '@aerokit/sdk/component'
+// import { Injected, Inject } from '@aerokit/sdk/component'
 import { TransactionRepository } from '../../data/accounts/TransactionRepository'
 import { TransactionEntity } from '../../data/accounts/TransactionEntity'
 
@@ -11,11 +11,12 @@ const validationModules = await Extensions.loadExtensionModules('codbex-sample-e
 
 @Controller
 @Documentation('codbex-sample-edm-bank-core - Transaction Controller')
-@Injected()
+// @Injected()
 class TransactionController {
 
-    @Inject('TransactionRepository')
-    private readonly repository!: TransactionRepository;
+    // @Inject('TransactionRepository')
+    // private readonly repository!: TransactionRepository;
+    private readonly repository = new TransactionRepository();
 
     @Get('/')
     @Documentation('Get All Transaction')
