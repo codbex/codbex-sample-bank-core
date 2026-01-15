@@ -23,51 +23,51 @@ angular.module('page', ['blimpKit', 'platformView', 'platformLocale']).controlle
 		let entity = $scope.entity;
 		const filter = {
 			$filter: {
-				equals: {
-				},
-				notEquals: {
-				},
-				contains: {
-				},
-				greaterThan: {
-				},
-				greaterThanOrEqual: {
-				},
-				lessThan: {
-				},
-				lessThanOrEqual: {
-				}
-			},
+				conditions: [],
+				sorts: [],
+				limit: 20,
+				offset: 0
+			}
 		};
 		if (entity.id !== undefined) {
-			filter.$filter.equals.id = entity.id;
+			const condition = { propertyName: 'id', operator: 'EQ', value: entity.id };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.accountId !== undefined) {
-			filter.$filter.equals.accountId = entity.accountId;
+			const condition = { propertyName: 'accountId', operator: 'EQ', value: entity.accountId };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.reference) {
-			filter.$filter.contains.reference = entity.reference;
+			const condition = { propertyName: 'reference', operator: 'LIKE', value: `%${entity.reference}%` };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.amount !== undefined) {
-			filter.$filter.equals.amount = entity.amount;
+			const condition = { propertyName: 'amount', operator: 'EQ', value: entity.amount };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.direction) {
-			filter.$filter.contains.direction = entity.direction;
+			const condition = { propertyName: 'direction', operator: 'LIKE', value: `%${entity.direction}%` };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.fee !== undefined) {
-			filter.$filter.equals.fee = entity.fee;
+			const condition = { propertyName: 'fee', operator: 'EQ', value: entity.fee };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.exchangeRate !== undefined) {
-			filter.$filter.equals.exchangeRate = entity.exchangeRate;
+			const condition = { propertyName: 'exchangeRate', operator: 'EQ', value: entity.exchangeRate };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.approved !== undefined && entity.isapprovedIndeterminate === false) {
-			filter.$filter.equals.approved = entity.approved;
+			const condition = { propertyName: 'approved', operator: 'EQ', value: entity.approved };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.createdOnFrom) {
-			filter.$filter.greaterThanOrEqual.createdOn = entity.createdOnFrom;
+			const condition = { propertyName: 'createdOn', operator: 'GE', value: entity.createdOnFrom };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.createdOnTo) {
-			filter.$filter.lessThanOrEqual.createdOn = entity.createdOnTo;
+			const condition = { propertyName: 'createdOn', operator: 'LE', value: entity.createdOnTo };
+			filter.$filter.conditions.push(condition);
 		}
 		Dialogs.postMessage({ topic: 'codbex-sample-edm-bank-core.accounts.Transaction.entitySearch', data: {
 			entity: entity,

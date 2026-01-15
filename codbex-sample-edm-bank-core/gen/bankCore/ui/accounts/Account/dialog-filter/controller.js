@@ -41,66 +41,71 @@ angular.module('page', ['blimpKit', 'platformView', 'platformLocale']).controlle
 		let entity = $scope.entity;
 		const filter = {
 			$filter: {
-				equals: {
-				},
-				notEquals: {
-				},
-				contains: {
-				},
-				greaterThan: {
-				},
-				greaterThanOrEqual: {
-				},
-				lessThan: {
-				},
-				lessThanOrEqual: {
-				}
-			},
+				conditions: [],
+				sorts: [],
+				limit: 20,
+				offset: 0
+			}
 		};
 		if (entity.id !== undefined) {
-			filter.$filter.equals.id = entity.id;
+			const condition = { propertyName: 'id', operator: 'EQ', value: entity.id };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.iban) {
-			filter.$filter.contains.iban = entity.iban;
+			const condition = { propertyName: 'iban', operator: 'LIKE', value: `%${entity.iban}%` };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.customerId !== undefined) {
-			filter.$filter.equals.customerId = entity.customerId;
+			const condition = { propertyName: 'customerId', operator: 'EQ', value: entity.customerId };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.currency) {
-			filter.$filter.contains.currency = entity.currency;
+			const condition = { propertyName: 'currency', operator: 'LIKE', value: `%${entity.currency}%` };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.balance !== undefined) {
-			filter.$filter.equals.balance = entity.balance;
+			const condition = { propertyName: 'balance', operator: 'EQ', value: entity.balance };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.overdraftLimit !== undefined) {
-			filter.$filter.equals.overdraftLimit = entity.overdraftLimit;
+			const condition = { propertyName: 'overdraftLimit', operator: 'EQ', value: entity.overdraftLimit };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.status !== undefined) {
-			filter.$filter.equals.status = entity.status;
+			const condition = { propertyName: 'status', operator: 'EQ', value: entity.status };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.openedOnFrom) {
-			filter.$filter.greaterThanOrEqual.openedOn = entity.openedOnFrom;
+			const condition = { propertyName: 'openedOn', operator: 'GE', value: entity.openedOnFrom };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.openedOnTo) {
-			filter.$filter.lessThanOrEqual.openedOn = entity.openedOnTo;
+			const condition = { propertyName: 'openedOn', operator: 'LE', value: entity.openedOnTo };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.lastAccessTimeFrom) {
-			filter.$filter.greaterThanOrEqual.lastAccessTime = entity.lastAccessTimeFrom;
+			const condition = { propertyName: 'lastAccessTime', operator: 'GE', value: entity.lastAccessTimeFrom };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.lastAccessTimeTo) {
-			filter.$filter.lessThanOrEqual.lastAccessTime = entity.lastAccessTimeTo;
+			const condition = { propertyName: 'lastAccessTime', operator: 'LE', value: entity.lastAccessTimeTo };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.createdAtFrom) {
-			filter.$filter.greaterThanOrEqual.createdAt = entity.createdAtFrom;
+			const condition = { propertyName: 'createdAt', operator: 'GE', value: entity.createdAtFrom };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.createdAtTo) {
-			filter.$filter.lessThanOrEqual.createdAt = entity.createdAtTo;
+			const condition = { propertyName: 'createdAt', operator: 'LE', value: entity.createdAtTo };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.updatedAtFrom) {
-			filter.$filter.greaterThanOrEqual.updatedAt = entity.updatedAtFrom;
+			const condition = { propertyName: 'updatedAt', operator: 'GE', value: entity.updatedAtFrom };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.updatedAtTo) {
-			filter.$filter.lessThanOrEqual.updatedAt = entity.updatedAtTo;
+			const condition = { propertyName: 'updatedAt', operator: 'LE', value: entity.updatedAtTo };
+			filter.$filter.conditions.push(condition);
 		}
 		Dialogs.postMessage({ topic: 'codbex-sample-edm-bank-core.accounts.Account.entitySearch', data: {
 			entity: entity,

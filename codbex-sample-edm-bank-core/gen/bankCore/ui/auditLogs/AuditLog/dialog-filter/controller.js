@@ -27,39 +27,35 @@ angular.module('page', ['blimpKit', 'platformView', 'platformLocale']).controlle
 		let entity = $scope.entity;
 		const filter = {
 			$filter: {
-				equals: {
-				},
-				notEquals: {
-				},
-				contains: {
-				},
-				greaterThan: {
-				},
-				greaterThanOrEqual: {
-				},
-				lessThan: {
-				},
-				lessThanOrEqual: {
-				}
-			},
+				conditions: [],
+				sorts: [],
+				limit: 20,
+				offset: 0
+			}
 		};
 		if (entity.id !== undefined) {
-			filter.$filter.equals.id = entity.id;
+			const condition = { propertyName: 'id', operator: 'EQ', value: entity.id };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.entityName) {
-			filter.$filter.contains.entityName = entity.entityName;
+			const condition = { propertyName: 'entityName', operator: 'LIKE', value: `%${entity.entityName}%` };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.entityId !== undefined) {
-			filter.$filter.equals.entityId = entity.entityId;
+			const condition = { propertyName: 'entityId', operator: 'EQ', value: entity.entityId };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.operation) {
-			filter.$filter.contains.operation = entity.operation;
+			const condition = { propertyName: 'operation', operator: 'LIKE', value: `%${entity.operation}%` };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.createdAtFrom) {
-			filter.$filter.greaterThanOrEqual.createdAt = entity.createdAtFrom;
+			const condition = { propertyName: 'createdAt', operator: 'GE', value: entity.createdAtFrom };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.createdAtTo) {
-			filter.$filter.lessThanOrEqual.createdAt = entity.createdAtTo;
+			const condition = { propertyName: 'createdAt', operator: 'LE', value: entity.createdAtTo };
+			filter.$filter.conditions.push(condition);
 		}
 		Dialogs.postMessage({ topic: 'codbex-sample-edm-bank-core.auditLogs.AuditLog.entitySearch', data: {
 			entity: entity,

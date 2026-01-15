@@ -28,42 +28,39 @@ angular.module('page', ['blimpKit', 'platformView', 'platformLocale']).controlle
 		let entity = $scope.entity;
 		const filter = {
 			$filter: {
-				equals: {
-				},
-				notEquals: {
-				},
-				contains: {
-				},
-				greaterThan: {
-				},
-				greaterThanOrEqual: {
-				},
-				lessThan: {
-				},
-				lessThanOrEqual: {
-				}
-			},
+				conditions: [],
+				sorts: [],
+				limit: 20,
+				offset: 0
+			}
 		};
 		if (entity.id !== undefined) {
-			filter.$filter.equals.id = entity.id;
+			const condition = { propertyName: 'id', operator: 'EQ', value: entity.id };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.customerId !== undefined) {
-			filter.$filter.equals.customerId = entity.customerId;
+			const condition = { propertyName: 'customerId', operator: 'EQ', value: entity.customerId };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.documentType) {
-			filter.$filter.contains.documentType = entity.documentType;
+			const condition = { propertyName: 'documentType', operator: 'LIKE', value: `%${entity.documentType}%` };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.fileName) {
-			filter.$filter.contains.fileName = entity.fileName;
+			const condition = { propertyName: 'fileName', operator: 'LIKE', value: `%${entity.fileName}%` };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.checksum) {
-			filter.$filter.contains.checksum = entity.checksum;
+			const condition = { propertyName: 'checksum', operator: 'LIKE', value: `%${entity.checksum}%` };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.uploadedAtFrom) {
-			filter.$filter.greaterThanOrEqual.uploadedAt = entity.uploadedAtFrom;
+			const condition = { propertyName: 'uploadedAt', operator: 'GE', value: entity.uploadedAtFrom };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.uploadedAtTo) {
-			filter.$filter.lessThanOrEqual.uploadedAt = entity.uploadedAtTo;
+			const condition = { propertyName: 'uploadedAt', operator: 'LE', value: entity.uploadedAtTo };
+			filter.$filter.conditions.push(condition);
 		}
 		Dialogs.postMessage({ topic: 'codbex-sample-edm-bank-core.documents.Document.entitySearch', data: {
 			entity: entity,

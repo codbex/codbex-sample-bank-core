@@ -39,60 +39,63 @@ angular.module('page', ['blimpKit', 'platformView', 'platformLocale']).controlle
 		let entity = $scope.entity;
 		const filter = {
 			$filter: {
-				equals: {
-				},
-				notEquals: {
-				},
-				contains: {
-				},
-				greaterThan: {
-				},
-				greaterThanOrEqual: {
-				},
-				lessThan: {
-				},
-				lessThanOrEqual: {
-				}
-			},
+				conditions: [],
+				sorts: [],
+				limit: 20,
+				offset: 0
+			}
 		};
 		if (entity.id !== undefined) {
-			filter.$filter.equals.id = entity.id;
+			const condition = { propertyName: 'id', operator: 'EQ', value: entity.id };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.customerNumber) {
-			filter.$filter.contains.customerNumber = entity.customerNumber;
+			const condition = { propertyName: 'customerNumber', operator: 'LIKE', value: `%${entity.customerNumber}%` };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.type) {
-			filter.$filter.contains.type = entity.type;
+			const condition = { propertyName: 'type', operator: 'LIKE', value: `%${entity.type}%` };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.firstName) {
-			filter.$filter.contains.firstName = entity.firstName;
+			const condition = { propertyName: 'firstName', operator: 'LIKE', value: `%${entity.firstName}%` };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.lastName) {
-			filter.$filter.contains.lastName = entity.lastName;
+			const condition = { propertyName: 'lastName', operator: 'LIKE', value: `%${entity.lastName}%` };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.dateOfBirthFrom) {
-			filter.$filter.greaterThanOrEqual.dateOfBirth = entity.dateOfBirthFrom;
+			const condition = { propertyName: 'dateOfBirth', operator: 'GE', value: entity.dateOfBirthFrom };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.dateOfBirthTo) {
-			filter.$filter.lessThanOrEqual.dateOfBirth = entity.dateOfBirthTo;
+			const condition = { propertyName: 'dateOfBirth', operator: 'LE', value: entity.dateOfBirthTo };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.isActive !== undefined && entity.isisActiveIndeterminate === false) {
-			filter.$filter.equals.isActive = entity.isActive;
+			const condition = { propertyName: 'isActive', operator: 'EQ', value: entity.isActive };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.riskScore !== undefined) {
-			filter.$filter.equals.riskScore = entity.riskScore;
+			const condition = { propertyName: 'riskScore', operator: 'EQ', value: entity.riskScore };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.createdAtFrom) {
-			filter.$filter.greaterThanOrEqual.createdAt = entity.createdAtFrom;
+			const condition = { propertyName: 'createdAt', operator: 'GE', value: entity.createdAtFrom };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.createdAtTo) {
-			filter.$filter.lessThanOrEqual.createdAt = entity.createdAtTo;
+			const condition = { propertyName: 'createdAt', operator: 'LE', value: entity.createdAtTo };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.updatedAtFrom) {
-			filter.$filter.greaterThanOrEqual.updatedAt = entity.updatedAtFrom;
+			const condition = { propertyName: 'updatedAt', operator: 'GE', value: entity.updatedAtFrom };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.updatedAtTo) {
-			filter.$filter.lessThanOrEqual.updatedAt = entity.updatedAtTo;
+			const condition = { propertyName: 'updatedAt', operator: 'LE', value: entity.updatedAtTo };
+			filter.$filter.conditions.push(condition);
 		}
 		Dialogs.postMessage({ topic: 'codbex-sample-edm-bank-core.customers.Customer.entitySearch', data: {
 			entity: entity,
