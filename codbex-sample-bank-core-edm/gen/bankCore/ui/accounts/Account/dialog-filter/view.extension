@@ -1,0 +1,5 @@
+{
+    "module": "codbex-sample-bank-core-edm/gen/bankCore/ui/accounts/Account/dialog-filter/view.js",
+    "extensionPoint": "application-windows",
+    "description": "codbex-sample-bank-core-edm - Application Dialog Window"
+}

@@ -1,5 +1,0 @@
-{
-    "module": "/codbex-sample-dashboard-bank-core/customer-onboarding/widget.js",
-    "extensionPoint": "dashboard-widgets",
-    "description": "Customer Onboarding Widget"
-}

@@ -1,0 +1,4 @@
+{
+    "name": "codbex-sample-bank-core-edm-auditLogs-AuditLog",
+    "description": "Extension Point for the codbex-sample-bank-core-edm-auditLogs-AuditLog entity"
+}

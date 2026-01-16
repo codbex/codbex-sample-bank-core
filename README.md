@@ -71,13 +71,13 @@ BLOB, CLOB
 Each EDM entity generates a **TypeScript repository** under:
 
 ```text
-codbex-sample-edm-bank-core/gen/bankCore/data/<entity>/
+codbex-sample-bank-core-edm/gen/bankCore/data/<entity>/
 ```
 
 Example:
 
 ```text
-codbex-sample-edm-bank-core/gen/bankCore/data/accounts/AccountRepository.ts
+codbex-sample-bank-core-edm/gen/bankCore/data/accounts/AccountRepository.ts
 ```
 
 Repositories provide:
@@ -94,7 +94,7 @@ Repositories provide:
 import { Response } from '@aerokit/sdk/http';
 import { Operator, Direction } from '@aerokit/sdk/db';
 import { UUID } from '@aerokit/sdk/utils';
-import { AccountRepository } from 'codbex-sample-edm-bank-core/gen/bankCore/data/accounts/AccountRepository';
+import { AccountRepository } from 'codbex-sample-bank-core-edm/gen/bankCore/data/accounts/AccountRepository';
 
 const repo = new AccountRepository();
 

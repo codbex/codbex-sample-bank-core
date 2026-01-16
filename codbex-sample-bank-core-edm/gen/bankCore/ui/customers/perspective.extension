@@ -1,0 +1,5 @@
+{
+    "module": "codbex-sample-bank-core-edm/gen/bankCore/ui/customers/perspective.js",
+    "extensionPoint": "application-perspectives",
+    "description": "codbex-sample-bank-core-edm - Perspective - customers"
+}

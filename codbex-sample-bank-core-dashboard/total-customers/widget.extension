@@ -1,0 +1,5 @@
+{
+    "module": "/codbex-sample-bank-core-dashboard/total-customers/widget.js",
+    "extensionPoint": "dashboard-widgets",
+    "description": "Total Customers Widget"
+}

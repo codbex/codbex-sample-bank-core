@@ -1,0 +1,19 @@
+angular.module('total-customers', ['blimpKit', 'platformView']).controller('totalCustomersController', ($scope, $http) => {
+    const Shell = new ShellHub();
+
+    $scope.openPerspective = () => {
+        if (viewData && viewData.perspectiveId) Shell.showPerspective({ id: viewData.perspectiveId });
+    };
+
+
+    $http.get('/services/ts/codbex-sample-bank-core-edm/gen/bankCore/api/customers/CustomerController.ts/count')
+        .then((response) => {
+            $scope.$evalAsync(() => {
+                $scope.totalCustomers = response.data.count;
+            });
+        }, (error) => {
+            $scope.totalCustomers = 'n/a';
+            console.error(error);
+        }
+        );
+});

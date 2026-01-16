@@ -1,0 +1,5 @@
+{
+    "module": "codbex-sample-bank-core-edm/gen/bankCore/ui/auditLogs/AuditLog/dialog-filter/view.js",
+    "extensionPoint": "application-windows",
+    "description": "codbex-sample-bank-core-edm - Application Dialog Window"
+}

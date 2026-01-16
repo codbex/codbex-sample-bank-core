@@ -1,0 +1,5 @@
+{
+    "module": "codbex-sample-bank-core-edm/gen/bankCore/ui/accounts/Account/main-details/view.js",
+    "extensionPoint": "application-views",
+    "description": "codbex-sample-bank-core-edm - Application View - Main Details"
+}
