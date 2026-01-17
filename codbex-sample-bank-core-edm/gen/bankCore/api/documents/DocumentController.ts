@@ -3,7 +3,7 @@ import { HttpUtils } from "@aerokit/sdk/http/utils";
 import { ValidationError } from '@aerokit/sdk/http/errors'
 import { Options } from '@aerokit/sdk/db'
 import { Extensions } from "@aerokit/sdk/extensions"
-// import { Injected, Inject } from '@aerokit/sdk/component'
+import { Injected, Inject } from '@aerokit/sdk/component'
 import { DocumentRepository } from '../../data/documents/DocumentRepository'
 import { DocumentEntity } from '../../data/documents/DocumentEntity'
 
@@ -11,12 +11,11 @@ const validationModules = await Extensions.loadExtensionModules('codbex-sample-b
 
 @Controller
 @Documentation('codbex-sample-bank-core-edm - Document Controller')
-// @Injected()
+@Injected()
 class DocumentController {
 
-    // @Inject('DocumentRepository')
-    // private readonly repository!: DocumentRepository;
-    private readonly repository = new DocumentRepository();
+    @Inject('DocumentRepository')
+    private readonly repository!: DocumentRepository;
 
     @Get('/')
     @Documentation('Get All Document')
