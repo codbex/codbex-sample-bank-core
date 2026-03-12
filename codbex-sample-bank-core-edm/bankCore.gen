@@ -87,6 +87,7 @@
     {
       "properties": [
         {
+          "auditType": "NONE",
           "dataAutoIncrement": true,
           "dataName": "CUSTOMER_ID",
           "dataNullable": false,
@@ -103,6 +104,7 @@
           "dataUnique": false,
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetLabel": "id",
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
@@ -111,6 +113,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataLength": "20",
           "dataName": "CUSTOMER_CUSTOMERNUMBER",
           "dataNullable": false,
@@ -129,6 +132,7 @@
           "dataAutoIncrement": false,
           "dataPrimaryKey": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "string",
@@ -138,6 +142,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataDefaultValue": "'I'",
           "dataLength": "1",
           "dataName": "CUSTOMER_TYPE",
@@ -157,6 +162,7 @@
           "dataUnique": false,
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "string",
@@ -166,6 +172,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataLength": "100",
           "dataName": "CUSTOMER_FIRSTNAME",
           "dataNullable": false,
@@ -184,6 +191,7 @@
           "dataPrimaryKey": false,
           "dataUnique": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "string",
@@ -193,6 +201,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataLength": "100",
           "dataName": "CUSTOMER_LASTNAME",
           "dataNullable": false,
@@ -211,6 +220,7 @@
           "dataPrimaryKey": false,
           "dataUnique": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "string",
@@ -220,6 +230,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataName": "CUSTOMER_DATEOFBIRTH",
           "dataNullable": true,
           "dataType": "DATE",
@@ -237,6 +248,7 @@
           "dataUnique": false,
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "date",
@@ -245,6 +257,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataDefaultValue": "true",
           "dataName": "CUSTOMER_ISACTIVE",
           "dataNullable": true,
@@ -263,6 +276,7 @@
           "dataUnique": false,
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "boolean",
@@ -270,6 +284,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataDefaultValue": "0",
           "dataName": "CUSTOMER_RISKSCORE",
           "dataNullable": true,
@@ -288,6 +303,7 @@
           "dataUnique": false,
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "double",
@@ -295,6 +311,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataName": "CUSTOMER_PROFILENOTES",
           "dataNullable": true,
           "dataType": "CLOB",
@@ -312,6 +329,7 @@
           "dataUnique": false,
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "",
@@ -319,6 +337,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "calculatedPropertyExpressionCreate": "new Date()",
           "dataName": "CUSTOMER_CREATEDAT",
           "dataNullable": true,
@@ -337,6 +356,7 @@
           "dataPrimaryKey": false,
           "dataUnique": false,
           "isRequiredProperty": false,
+          "isReadOnlyProperty": false,
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "timestamp",
@@ -345,6 +365,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "calculatedPropertyExpressionUpdate": "new Date()",
           "dataName": "CUSTOMER_UPDATEDAT",
           "dataNullable": true,
@@ -363,6 +384,7 @@
           "dataPrimaryKey": false,
           "dataUnique": false,
           "isRequiredProperty": false,
+          "isReadOnlyProperty": false,
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "timestamp",
@@ -406,6 +428,7 @@
     {
       "properties": [
         {
+          "auditType": "NONE",
           "dataAutoIncrement": true,
           "dataName": "ACCOUNT_ID",
           "dataNullable": true,
@@ -422,6 +445,7 @@
           "dataUnique": false,
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetLabel": "id",
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
@@ -430,6 +454,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataLength": "34",
           "dataName": "ACCOUNT_IBAN",
           "dataNullable": true,
@@ -448,6 +473,7 @@
           "dataAutoIncrement": false,
           "dataPrimaryKey": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "string",
@@ -457,6 +483,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataName": "ACCOUNT_CUSTOMERID",
           "dataNullable": false,
           "dataType": "BIGINT",
@@ -480,6 +507,7 @@
           "dataUnique": false,
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetDropdownUrl": "/services/ts/codbex-sample-bank-core-edm/gen/bankCore/api/customers/CustomerService.ts",
           "widgetDropdownControllerUrl": "/services/ts/codbex-sample-bank-core-edm/gen/bankCore/api/customers/CustomerController.ts",
           "dataTypeJava": "long",
@@ -487,6 +515,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataDefaultValue": "'EUR'",
           "dataLength": "3",
           "dataName": "ACCOUNT_CURRENCY",
@@ -506,6 +535,7 @@
           "dataUnique": false,
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "string",
@@ -515,6 +545,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataDefaultValue": "0",
           "dataLength": "15",
           "dataName": "ACCOUNT_BALANCE",
@@ -536,6 +567,7 @@
           "dataUnique": false,
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "double",
@@ -543,6 +575,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataDefaultValue": "0",
           "dataLength": "15",
           "dataName": "ACCOUNT_OVERDRAFTLIMIT",
@@ -564,6 +597,7 @@
           "dataUnique": false,
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "double",
@@ -571,6 +605,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataDefaultValue": "1",
           "dataName": "ACCOUNT_STATUS",
           "dataNullable": true,
@@ -589,6 +624,7 @@
           "dataUnique": false,
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "short",
@@ -596,6 +632,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataDefaultValue": "CURRENT_DATE",
           "dataName": "ACCOUNT_OPENEDON",
           "dataNullable": true,
@@ -615,6 +652,7 @@
           "dataUnique": false,
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "date",
@@ -623,6 +661,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataName": "ACCOUNT_LASTACCESSTIME",
           "dataNullable": true,
           "dataType": "TIME",
@@ -640,6 +679,7 @@
           "dataUnique": false,
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "time",
@@ -648,6 +688,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "calculatedPropertyExpressionCreate": "new Date()",
           "dataName": "ACCOUNT_CREATEDAT",
           "dataNullable": true,
@@ -666,6 +707,7 @@
           "dataPrimaryKey": false,
           "dataUnique": false,
           "isRequiredProperty": false,
+          "isReadOnlyProperty": false,
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "timestamp",
@@ -674,6 +716,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "calculatedPropertyExpressionUpdate": "new Date()",
           "dataName": "ACCOUNT_UPDATEDAT",
           "dataNullable": true,
@@ -692,6 +735,7 @@
           "dataPrimaryKey": false,
           "dataUnique": false,
           "isRequiredProperty": false,
+          "isReadOnlyProperty": false,
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "time",
@@ -734,6 +778,7 @@
       "primaryKeysString": "id",
       "masterProperties": {
         "title": {
+          "auditType": "NONE",
           "dataLength": "34",
           "dataName": "ACCOUNT_IBAN",
           "dataNullable": true,
@@ -752,6 +797,7 @@
           "dataAutoIncrement": false,
           "dataPrimaryKey": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "string",
@@ -762,6 +808,7 @@
         },
         "properties": [
           {
+            "auditType": "NONE",
             "dataName": "ACCOUNT_CUSTOMERID",
             "dataNullable": false,
             "dataType": "BIGINT",
@@ -785,6 +832,7 @@
             "dataUnique": false,
             "isRequiredProperty": false,
             "isCalculatedProperty": false,
+            "isReadOnlyProperty": false,
             "widgetDropdownUrl": "/services/ts/codbex-sample-bank-core-edm/gen/bankCore/api/customers/CustomerService.ts",
             "widgetDropdownControllerUrl": "/services/ts/codbex-sample-bank-core-edm/gen/bankCore/api/customers/CustomerController.ts",
             "dataTypeJava": "long",
@@ -792,6 +840,7 @@
             "inputRule": ""
           },
           {
+            "auditType": "NONE",
             "dataDefaultValue": "'EUR'",
             "dataLength": "3",
             "dataName": "ACCOUNT_CURRENCY",
@@ -811,6 +860,7 @@
             "dataUnique": false,
             "isRequiredProperty": false,
             "isCalculatedProperty": false,
+            "isReadOnlyProperty": false,
             "widgetDropdownUrl": "",
             "widgetDropdownControllerUrl": "",
             "dataTypeJava": "string",
@@ -820,6 +870,7 @@
             "inputRule": ""
           },
           {
+            "auditType": "NONE",
             "dataDefaultValue": "0",
             "dataLength": "15",
             "dataName": "ACCOUNT_BALANCE",
@@ -841,6 +892,7 @@
             "dataUnique": false,
             "isRequiredProperty": false,
             "isCalculatedProperty": false,
+            "isReadOnlyProperty": false,
             "widgetDropdownUrl": "",
             "widgetDropdownControllerUrl": "",
             "dataTypeJava": "double",
@@ -848,6 +900,7 @@
             "inputRule": ""
           },
           {
+            "auditType": "NONE",
             "dataDefaultValue": "0",
             "dataLength": "15",
             "dataName": "ACCOUNT_OVERDRAFTLIMIT",
@@ -869,6 +922,7 @@
             "dataUnique": false,
             "isRequiredProperty": false,
             "isCalculatedProperty": false,
+            "isReadOnlyProperty": false,
             "widgetDropdownUrl": "",
             "widgetDropdownControllerUrl": "",
             "dataTypeJava": "double",
@@ -876,6 +930,7 @@
             "inputRule": ""
           },
           {
+            "auditType": "NONE",
             "dataDefaultValue": "1",
             "dataName": "ACCOUNT_STATUS",
             "dataNullable": true,
@@ -894,6 +949,7 @@
             "dataUnique": false,
             "isRequiredProperty": false,
             "isCalculatedProperty": false,
+            "isReadOnlyProperty": false,
             "widgetDropdownUrl": "",
             "widgetDropdownControllerUrl": "",
             "dataTypeJava": "short",
@@ -901,6 +957,7 @@
             "inputRule": ""
           },
           {
+            "auditType": "NONE",
             "dataDefaultValue": "CURRENT_DATE",
             "dataName": "ACCOUNT_OPENEDON",
             "dataNullable": true,
@@ -920,6 +977,7 @@
             "dataUnique": false,
             "isRequiredProperty": false,
             "isCalculatedProperty": false,
+            "isReadOnlyProperty": false,
             "widgetDropdownUrl": "",
             "widgetDropdownControllerUrl": "",
             "dataTypeJava": "date",
@@ -928,6 +986,7 @@
             "inputRule": ""
           },
           {
+            "auditType": "NONE",
             "dataName": "ACCOUNT_LASTACCESSTIME",
             "dataNullable": true,
             "dataType": "TIME",
@@ -945,6 +1004,7 @@
             "dataUnique": false,
             "isRequiredProperty": false,
             "isCalculatedProperty": false,
+            "isReadOnlyProperty": false,
             "widgetDropdownUrl": "",
             "widgetDropdownControllerUrl": "",
             "dataTypeJava": "time",
@@ -960,6 +1020,7 @@
     {
       "properties": [
         {
+          "auditType": "NONE",
           "dataAutoIncrement": true,
           "dataName": "TRANSACTION_ID",
           "dataNullable": true,
@@ -976,6 +1037,7 @@
           "dataUnique": false,
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetLabel": "id",
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
@@ -984,6 +1046,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataName": "TRANSACTION_ACCOUNTID",
           "dataNullable": false,
           "dataType": "BIGINT",
@@ -1009,6 +1072,7 @@
           "dataUnique": false,
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetDropdownUrl": "/services/ts/codbex-sample-bank-core-edm/gen/bankCore/api/accounts/AccountService.ts",
           "widgetDropdownControllerUrl": "/services/ts/codbex-sample-bank-core-edm/gen/bankCore/api/accounts/AccountController.ts",
           "dataTypeJava": "long",
@@ -1016,6 +1080,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataLength": "64",
           "dataName": "TRANSACTION_REFERENCE",
           "dataNullable": false,
@@ -1034,6 +1099,7 @@
           "dataAutoIncrement": false,
           "dataPrimaryKey": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "string",
@@ -1043,6 +1109,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataLength": "15",
           "dataName": "TRANSACTION_AMOUNT",
           "dataNullable": false,
@@ -1063,6 +1130,7 @@
           "dataPrimaryKey": false,
           "dataUnique": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "double",
@@ -1070,6 +1138,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataLength": "1",
           "dataName": "TRANSACTION_DIRECTION",
           "dataNullable": false,
@@ -1088,6 +1157,7 @@
           "dataUnique": false,
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "string",
@@ -1097,6 +1167,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataDefaultValue": "0",
           "dataName": "TRANSACTION_FEE",
           "dataNullable": true,
@@ -1115,6 +1186,7 @@
           "dataUnique": false,
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "double",
@@ -1122,6 +1194,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataName": "TRANSACTION_EXCHANGERATE",
           "dataNullable": true,
           "dataType": "REAL",
@@ -1139,6 +1212,7 @@
           "dataUnique": false,
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "double",
@@ -1146,6 +1220,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataDefaultValue": "false",
           "dataName": "TRANSACTION_APPROVED",
           "dataNullable": true,
@@ -1164,6 +1239,7 @@
           "dataUnique": false,
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "boolean",
@@ -1171,6 +1247,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "calculatedPropertyExpressionCreate": "new Date()",
           "dataName": "TRANSACTION_CREATEDON",
           "dataNullable": true,
@@ -1189,6 +1266,7 @@
           "dataPrimaryKey": false,
           "dataUnique": false,
           "isRequiredProperty": false,
+          "isReadOnlyProperty": false,
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "timestamp",
@@ -1235,6 +1313,7 @@
     {
       "properties": [
         {
+          "auditType": "NONE",
           "dataAutoIncrement": true,
           "dataName": "DOCUMENT_ID",
           "dataNullable": true,
@@ -1251,6 +1330,7 @@
           "dataUnique": false,
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetLabel": "id",
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
@@ -1259,6 +1339,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataName": "DOCUMENT_CUSTOMERID",
           "dataNullable": false,
           "dataType": "BIGINT",
@@ -1282,6 +1363,7 @@
           "dataUnique": false,
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetDropdownUrl": "/services/ts/codbex-sample-bank-core-edm/gen/bankCore/api/customers/CustomerService.ts",
           "widgetDropdownControllerUrl": "/services/ts/codbex-sample-bank-core-edm/gen/bankCore/api/customers/CustomerController.ts",
           "dataTypeJava": "long",
@@ -1289,6 +1371,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataLength": "50",
           "dataName": "DOCUMENT_DOCUMENTTYPE",
           "dataNullable": false,
@@ -1307,6 +1390,7 @@
           "dataPrimaryKey": false,
           "dataUnique": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "string",
@@ -1316,6 +1400,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataLength": "255",
           "dataName": "DOCUMENT_FILENAME",
           "dataNullable": false,
@@ -1334,6 +1419,7 @@
           "dataPrimaryKey": false,
           "dataUnique": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "string",
@@ -1343,6 +1429,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataName": "DOCUMENT_CONTENT",
           "dataNullable": false,
           "dataType": "BLOB",
@@ -1360,6 +1447,7 @@
           "dataUnique": false,
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "",
@@ -1367,6 +1455,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataLength": "64",
           "dataName": "DOCUMENT_CHECKSUM",
           "dataNullable": true,
@@ -1385,6 +1474,7 @@
           "dataPrimaryKey": false,
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "string",
@@ -1394,6 +1484,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "calculatedPropertyExpressionCreate": "new Date()",
           "dataName": "DOCUMENT_UPLOADEDAT",
           "dataNullable": true,
@@ -1412,6 +1503,7 @@
           "dataPrimaryKey": false,
           "dataUnique": false,
           "isRequiredProperty": false,
+          "isReadOnlyProperty": false,
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "date",
@@ -1456,6 +1548,7 @@
     {
       "properties": [
         {
+          "auditType": "NONE",
           "dataAutoIncrement": true,
           "dataName": "AUDITLOG_ID",
           "dataNullable": true,
@@ -1472,6 +1565,7 @@
           "dataUnique": false,
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetLabel": "id",
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
@@ -1480,6 +1574,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataLength": "100",
           "dataName": "AUDITLOG_ENTITYNAME",
           "dataNullable": false,
@@ -1498,6 +1593,7 @@
           "dataPrimaryKey": false,
           "dataUnique": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "string",
@@ -1507,6 +1603,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataName": "AUDITLOG_ENTITYID",
           "dataNullable": true,
           "dataType": "BIGINT",
@@ -1524,6 +1621,7 @@
           "dataUnique": false,
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "long",
@@ -1531,6 +1629,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataLength": "1",
           "dataName": "AUDITLOG_OPERATION",
           "dataNullable": false,
@@ -1549,6 +1648,7 @@
           "dataPrimaryKey": false,
           "dataUnique": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "string",
@@ -1558,6 +1658,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataName": "AUDITLOG_OLDVALUE",
           "dataNullable": true,
           "dataType": "CLOB",
@@ -1575,6 +1676,7 @@
           "dataUnique": false,
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "",
@@ -1582,6 +1684,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataName": "AUDITLOG_NEWVALUE",
           "dataNullable": true,
           "dataType": "CLOB",
@@ -1599,6 +1702,7 @@
           "dataUnique": false,
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "",
@@ -1606,6 +1710,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "calculatedPropertyExpressionCreate": "new Date()",
           "dataName": "AUDITLOG_CREATEDAT",
           "dataNullable": true,
@@ -1624,6 +1729,7 @@
           "dataPrimaryKey": false,
           "dataUnique": false,
           "isRequiredProperty": false,
+          "isReadOnlyProperty": false,
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "timestamp",

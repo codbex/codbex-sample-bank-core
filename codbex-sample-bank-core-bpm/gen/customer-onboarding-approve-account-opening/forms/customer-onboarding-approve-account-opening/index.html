@@ -7,24 +7,23 @@
         <link rel="icon" sizes="any" href="data:;base64,iVBORw0KGgo=">
 		<title config-title></title>
 		<script type="text/javascript" src="view.js"></script>
-		<script type="text/javascript" src="/services/js/platform-core/services/loader.js?id=view-js"></script>
-		<link type="text/css" rel="stylesheet" href="/services/js/platform-core/services/loader.js?id=view-css" />
+		<meta name="platform-links" category="ng-view">
 		<script type="text/javascript" src="controller.js"></script>
 	</head>
 
-	<body class="bk-vbox">
-		<bk-fieldset class="fd-margin--tiny" ng-form="forms.form">
+	<body class="bk-center--horizontal bk-box--items-start" ng-class="{'bk-padding':!_is_view}">
+		<bk-fieldset class="bk-padding bk-full-width bk-restrict-width--lg" ng-class="{'fd-card':!_is_view}" ng-style="!_is_view && { 'min-height': 'auto' }" ng-form="forms.form">
 			<bk-form-group>
 
-				<h3 bk-title header-size="3">{{ 'codbex-sample-bank-core-bpm:customer-onboarding-approve-account-opening-form.t.ApproveAccountOpening' | t:'Approve Account Opening' }}</h3>
+				<h3 bk-title header-size="3" >{{ 'codbex-sample-bank-core-bpm:customer-onboarding-approve-account-opening-form.t.ApproveAccountOpening' | t:'Approve Account Opening' }}</h3>
 				<p class="fd-text" ng-class="{'bk-pre-wrap' : true}">    </p>
 				<p class="fd-text" ng-class="{'bk-pre-wrap' : true}">   </p>
 				<div class=" bk-hbox bk-box--gap bk-box--items-stretch">
-				<h6 bk-title header-size="6">{{ 'codbex-sample-bank-core-bpm:customer-onboarding-approve-account-opening-form.t.FirstName' | t:'First Name:' }}</h6>
+				<h6 bk-title header-size="6" >{{ 'codbex-sample-bank-core-bpm:customer-onboarding-approve-account-opening-form.t.FirstName' | t:'First Name:' }}</h6>
 				<p class="fd-text" ng-class="{'bk-pre-wrap' : true}">{{ model.firstName }}</p>
-				<h6 bk-title header-size="6">{{ 'codbex-sample-bank-core-bpm:customer-onboarding-approve-account-opening-form.t.LastName' | t:'Last Name:' }}</h6>
+				<h6 bk-title header-size="6" >{{ 'codbex-sample-bank-core-bpm:customer-onboarding-approve-account-opening-form.t.LastName' | t:'Last Name:' }}</h6>
 				<p class="fd-text" ng-class="{'bk-pre-wrap' : true}">{{ model.lastName }}</p>
-				<h6 bk-title header-size="6">{{ 'codbex-sample-bank-core-bpm:customer-onboarding-approve-account-opening-form.t.DateofBirth' | t:'Date of Birth:' }}</h6>
+				<h6 bk-title header-size="6" >{{ 'codbex-sample-bank-core-bpm:customer-onboarding-approve-account-opening-form.t.DateofBirth' | t:'Date of Birth:' }}</h6>
 				<p class="fd-text" ng-class="{'bk-pre-wrap' : true}">{{ model.dateOfBirth }}</p>
 				</div>
 				<p class="fd-text" ng-class="{'bk-pre-wrap' : true}">   </p>
@@ -32,9 +31,9 @@
 				<p class="fd-text" ng-class="{'bk-pre-wrap' : true}">   </p>
 				<p class="fd-text" ng-class="{'bk-pre-wrap' : true}">   </p>
 				<div class=" bk-hbox bk-box--gap bk-box--items-stretch">
-				<h6 bk-title header-size="6">{{ 'codbex-sample-bank-core-bpm:customer-onboarding-approve-account-opening-form.t.CustomerNumber' | t:'Customer Number:' }}</h6>
+				<h6 bk-title header-size="6" >{{ 'codbex-sample-bank-core-bpm:customer-onboarding-approve-account-opening-form.t.CustomerNumber' | t:'Customer Number:' }}</h6>
 				<p class="fd-text" ng-class="{'bk-pre-wrap' : true}">{{ model.customerNumber }}</p>
-				<h6 bk-title header-size="6">{{ 'codbex-sample-bank-core-bpm:customer-onboarding-approve-account-opening-form.t.ProfileNotes' | t:'Profile Notes:' }}</h6>
+				<h6 bk-title header-size="6" >{{ 'codbex-sample-bank-core-bpm:customer-onboarding-approve-account-opening-form.t.ProfileNotes' | t:'Profile Notes:' }}</h6>
 				<p class="fd-text" ng-class="{'bk-pre-wrap' : true}">{{ model.profileNotes }}</p>
 				</div>
 				<bk-form-item horizontal="false">
@@ -43,9 +42,7 @@
 						max="9.99999999999E11" step="1.0" state="{{ !forms.form['i73e79d42-d5ca-1abd-a380-340b48ed987d'].$valid ? 'error' : '' }}" compact="false">
 					</bk-step-input>
 				</bk-form-item>
-				<div>
-					<bk-button class="bk-full-width" type="submit" ng-disabled="!forms.form.$valid" label="{{ 'codbex-sample-bank-core-bpm:customer-onboarding-approve-account-opening-form.t.CreateAccount' | t:'Create Account' }}" compact="false" state="positive" ng-click="createAccount()"></bk-button>
-				</div>
+				<bk-button class="bk-full-width" type="submit" ng-disabled="!forms.form.$valid" label="{{ 'codbex-sample-bank-core-bpm:customer-onboarding-approve-account-opening-form.t.CreateAccount' | t:'Create Account' }}" compact="false" state="positive" ng-click="createAccount()"></bk-button>
 			</bk-form-group>
 		</bk-fieldset>
 		<theme></theme>

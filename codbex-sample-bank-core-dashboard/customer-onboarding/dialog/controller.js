@@ -1,10 +1,9 @@
-angular.module('forms', ['blimpKit', 'platformView', 'angularFileUpload']).controller('FormController', ($scope, $http, ViewParameters, FileUploader) => {
+angular.module('forms', ['blimpKit', 'platformView', 'angularFileUpload']).controller('FormController', ($scope, $http, FileUploader) => {
     $scope.forms = {
         form: {}
     };
 
-    $scope.model = {
-    };
+    $scope.model = {};
 
     const Dialogs = new DialogHub();
     const Notifications = new NotificationHub();
@@ -35,8 +34,11 @@ angular.module('forms', ['blimpKit', 'platformView', 'angularFileUpload']).contr
                 description: response.data ?? 'Could not upload item. Check console for errors.',
                 type: 'negative'
             });
+            Dialogs.closeWindow({
+                id: 'bank-core-customer-onboarding'
+            });
         });
-    }
+    };
 
     $scope.uploader.onErrorItem = (_fileItem, response, _status, _headers) => {
         $scope.loading = false;
@@ -46,7 +48,10 @@ angular.module('forms', ['blimpKit', 'platformView', 'angularFileUpload']).contr
             description: response.err.message ?? 'Could not upload item. Check console for errors.',
             type: 'negative'
         });
-    }
+        Dialogs.closeWindow({
+            id: 'bank-core-customer-onboarding'
+        });
+    };
 
     $scope.uploader.onCompleteAll = () => {
         const documentPath = `${folderPath}/${$scope.fileName}`;
@@ -79,11 +84,11 @@ angular.module('forms', ['blimpKit', 'platformView', 'angularFileUpload']).contr
                 id: 'bank-core-customer-onboarding'
             });
         });
-    }
+    };
 
     $scope.uploadDocument = function () {
         $('#fileUpload').click();
-    }
+    };
 
     function getFolder() {
         const now = new Date();
@@ -96,5 +101,11 @@ angular.module('forms', ['blimpKit', 'platformView', 'angularFileUpload']).contr
 
         return `BankCore/${timestamp}/${uuid}`;
     }
+
+    $scope.cancel = () => {
+        Dialogs.closeWindow({
+            id: 'bank-core-customer-onboarding'
+        });
+    };
 
 });

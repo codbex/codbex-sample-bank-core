@@ -7,24 +7,25 @@
         <link rel="icon" sizes="any" href="data:;base64,iVBORw0KGgo=">
         <title config-title></title>
         <script type="text/javascript" src="view.js"></script>
-        <script type="text/javascript" src="/services/js/platform-core/services/loader.js?id=view-js"></script>
-        <script type="text/javascript" src="/services/js/platform-core/services/loader.js?id=file-upload-js"></script>
-        <link type="text/css" rel="stylesheet" href="/services/js/platform-core/services/loader.js?id=view-css" />
+        <meta name="platform-links" category="ng-view,ng-file-upload">
         <script type="text/javascript" src="controller.js"></script>
     </head>
 
-    <body class="bk-vbox">
+    <body class="bk-vbox bk-padding--tiny bk-box--gap bk-box--space-between">
         <bk-busy-indicator-extended class="bk-fill-parent" size="l" ng-show="loading">Loading...</bk-busy-indicator-extended>
-        <bk-fieldset class="fd-margin--tiny" ng-form="forms.form" ng-hide="loading">
+        <div class="bk-center--horizontal bk-full-width">
+            <span class="sap-icon sap-icon--business-card" style="font-size: 10rem" role="presentation" ng-hide="loading"></span>
+        </div>
+        <h3 bk-title class="bk-center--horizontal bk-padding-bottom--sm" wrap="true" header-size="3" aria-label="Upload ID Card" ng-hide="loading">Upload ID Card</h3>
+        <bk-fieldset ng-form="forms.form" ng-hide="loading">
             <bk-form-group>
-                <h3 bk-title header-size="3">Upload ID Card</h3>
-
-                <input id="fileUpload" type="file" nv-file-select="*.pdf" uploader="uploader" ng-hide="true" />
-                <div>
+                <bk-form-item>
+                    <input id="fileUpload" type="file" nv-file-select="*.pdf" uploader="uploader" ng-hide="true" />
                     <bk-button class="bk-full-width" type="submit" ng-disabled="!forms.form.$valid" label="Upload Document" compact="false" state="emphasized" ng-click="uploadDocument()"></bk-button>
-                </div>
+                </bk-form-item>
             </bk-form-group>
         </bk-fieldset>
+        <bk-button class="bk-full-width" type="button" label="Cancel" compact="false" ng-click="cancel()" ng-hide="loading"></bk-button>
         <theme></theme>
     </body>
 

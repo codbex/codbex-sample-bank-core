@@ -4,6 +4,7 @@
             {
                 "properties": [
                     {
+                        "auditType": "NONE",
                         "dataAutoIncrement": "true",
                         "dataName": "CUSTOMER_ID",
                         "dataNullable": "false",
@@ -18,6 +19,7 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
+                        "auditType": "NONE",
                         "dataLength": "20",
                         "dataName": "CUSTOMER_CUSTOMERNUMBER",
                         "dataNullable": "false",
@@ -34,6 +36,7 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
+                        "auditType": "NONE",
                         "dataDefaultValue": "'I'",
                         "dataLength": "1",
                         "dataName": "CUSTOMER_TYPE",
@@ -49,6 +52,7 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
+                        "auditType": "NONE",
                         "dataLength": "100",
                         "dataName": "CUSTOMER_FIRSTNAME",
                         "dataNullable": "false",
@@ -64,6 +68,7 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
+                        "auditType": "NONE",
                         "dataLength": "100",
                         "dataName": "CUSTOMER_LASTNAME",
                         "dataNullable": "false",
@@ -79,6 +84,7 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
+                        "auditType": "NONE",
                         "dataName": "CUSTOMER_DATEOFBIRTH",
                         "dataNullable": "true",
                         "dataType": "DATE",
@@ -92,6 +98,7 @@
                         "widgetType": "DATE"
                     },
                     {
+                        "auditType": "NONE",
                         "dataDefaultValue": "true",
                         "dataName": "CUSTOMER_ISACTIVE",
                         "dataNullable": "true",
@@ -106,6 +113,7 @@
                         "widgetType": "CHECKBOX"
                     },
                     {
+                        "auditType": "NONE",
                         "dataDefaultValue": "0",
                         "dataName": "CUSTOMER_RISKSCORE",
                         "dataNullable": "true",
@@ -120,6 +128,7 @@
                         "widgetType": "NUMBER"
                     },
                     {
+                        "auditType": "NONE",
                         "dataName": "CUSTOMER_PROFILENOTES",
                         "dataNullable": "true",
                         "dataType": "CLOB",
@@ -133,6 +142,7 @@
                         "widgetType": "TEXTAREA"
                     },
                     {
+                        "auditType": "NONE",
                         "calculatedPropertyExpressionCreate": "new Date()",
                         "dataName": "CUSTOMER_CREATEDAT",
                         "dataNullable": "true",
@@ -148,6 +158,7 @@
                         "widgetType": "DATETIME-LOCAL"
                     },
                     {
+                        "auditType": "NONE",
                         "calculatedPropertyExpressionUpdate": "new Date()",
                         "dataName": "CUSTOMER_UPDATEDAT",
                         "dataNullable": "true",
@@ -191,6 +202,7 @@
             {
                 "properties": [
                     {
+                        "auditType": "NONE",
                         "dataAutoIncrement": "true",
                         "dataName": "ACCOUNT_ID",
                         "dataNullable": "true",
@@ -205,6 +217,7 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
+                        "auditType": "NONE",
                         "dataLength": "34",
                         "dataName": "ACCOUNT_IBAN",
                         "dataNullable": "true",
@@ -221,6 +234,7 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
+                        "auditType": "NONE",
                         "dataName": "ACCOUNT_CUSTOMERID",
                         "dataNullable": "false",
                         "dataType": "BIGINT",
@@ -240,6 +254,7 @@
                         "relationshipEntityPerspectiveLabel": "Entities"
                     },
                     {
+                        "auditType": "NONE",
                         "dataDefaultValue": "'EUR'",
                         "dataLength": "3",
                         "dataName": "ACCOUNT_CURRENCY",
@@ -255,6 +270,7 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
+                        "auditType": "NONE",
                         "dataDefaultValue": "0",
                         "dataLength": "15",
                         "dataName": "ACCOUNT_BALANCE",
@@ -272,6 +288,7 @@
                         "widgetType": "NUMBER"
                     },
                     {
+                        "auditType": "NONE",
                         "dataDefaultValue": "0",
                         "dataLength": "15",
                         "dataName": "ACCOUNT_OVERDRAFTLIMIT",
@@ -289,6 +306,7 @@
                         "widgetType": "NUMBER"
                     },
                     {
+                        "auditType": "NONE",
                         "dataDefaultValue": "1",
                         "dataName": "ACCOUNT_STATUS",
                         "dataNullable": "true",
@@ -303,6 +321,7 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
+                        "auditType": "NONE",
                         "dataDefaultValue": "CURRENT_DATE",
                         "dataName": "ACCOUNT_OPENEDON",
                         "dataNullable": "true",
@@ -318,6 +337,7 @@
                         "widgetType": "DATE"
                     },
                     {
+                        "auditType": "NONE",
                         "dataName": "ACCOUNT_LASTACCESSTIME",
                         "dataNullable": "true",
                         "dataType": "TIME",
@@ -331,6 +351,7 @@
                         "widgetType": "TIME"
                     },
                     {
+                        "auditType": "NONE",
                         "calculatedPropertyExpressionCreate": "new Date()",
                         "dataName": "ACCOUNT_CREATEDAT",
                         "dataNullable": "true",
@@ -346,6 +367,7 @@
                         "widgetType": "DATETIME-LOCAL"
                     },
                     {
+                        "auditType": "NONE",
                         "calculatedPropertyExpressionUpdate": "new Date()",
                         "dataName": "ACCOUNT_UPDATEDAT",
                         "dataNullable": "true",
@@ -391,6 +413,7 @@
             {
                 "properties": [
                     {
+                        "auditType": "NONE",
                         "dataAutoIncrement": "true",
                         "dataName": "TRANSACTION_ID",
                         "dataNullable": "true",
@@ -405,6 +428,7 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
+                        "auditType": "NONE",
                         "dataName": "TRANSACTION_ACCOUNTID",
                         "dataNullable": "false",
                         "dataType": "BIGINT",
@@ -426,6 +450,7 @@
                         "relationshipEntityPerspectiveLabel": "Entities"
                     },
                     {
+                        "auditType": "NONE",
                         "dataLength": "64",
                         "dataName": "TRANSACTION_REFERENCE",
                         "dataNullable": "false",
@@ -442,6 +467,7 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
+                        "auditType": "NONE",
                         "dataLength": "15",
                         "dataName": "TRANSACTION_AMOUNT",
                         "dataNullable": "false",
@@ -459,6 +485,7 @@
                         "widgetType": "NUMBER"
                     },
                     {
+                        "auditType": "NONE",
                         "dataLength": "1",
                         "dataName": "TRANSACTION_DIRECTION",
                         "dataNullable": "false",
@@ -473,6 +500,7 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
+                        "auditType": "NONE",
                         "dataDefaultValue": "0",
                         "dataName": "TRANSACTION_FEE",
                         "dataNullable": "true",
@@ -487,6 +515,7 @@
                         "widgetType": "NUMBER"
                     },
                     {
+                        "auditType": "NONE",
                         "dataName": "TRANSACTION_EXCHANGERATE",
                         "dataNullable": "true",
                         "dataType": "REAL",
@@ -500,6 +529,7 @@
                         "widgetType": "NUMBER"
                     },
                     {
+                        "auditType": "NONE",
                         "dataDefaultValue": "false",
                         "dataName": "TRANSACTION_APPROVED",
                         "dataNullable": "true",
@@ -514,6 +544,7 @@
                         "widgetType": "CHECKBOX"
                     },
                     {
+                        "auditType": "NONE",
                         "calculatedPropertyExpressionCreate": "new Date()",
                         "dataName": "TRANSACTION_CREATEDON",
                         "dataNullable": "true",
@@ -557,6 +588,7 @@
             {
                 "properties": [
                     {
+                        "auditType": "NONE",
                         "dataAutoIncrement": "true",
                         "dataName": "DOCUMENT_ID",
                         "dataNullable": "true",
@@ -571,6 +603,7 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
+                        "auditType": "NONE",
                         "dataName": "DOCUMENT_CUSTOMERID",
                         "dataNullable": "false",
                         "dataType": "BIGINT",
@@ -590,6 +623,7 @@
                         "relationshipEntityPerspectiveLabel": "Entities"
                     },
                     {
+                        "auditType": "NONE",
                         "dataLength": "50",
                         "dataName": "DOCUMENT_DOCUMENTTYPE",
                         "dataNullable": "false",
@@ -605,6 +639,7 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
+                        "auditType": "NONE",
                         "dataLength": "255",
                         "dataName": "DOCUMENT_FILENAME",
                         "dataNullable": "false",
@@ -620,6 +655,7 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
+                        "auditType": "NONE",
                         "dataName": "DOCUMENT_CONTENT",
                         "dataNullable": "false",
                         "dataType": "BLOB",
@@ -633,6 +669,7 @@
                         "widgetType": "TEXTAREA"
                     },
                     {
+                        "auditType": "NONE",
                         "dataLength": "64",
                         "dataName": "DOCUMENT_CHECKSUM",
                         "dataNullable": "true",
@@ -648,6 +685,7 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
+                        "auditType": "NONE",
                         "calculatedPropertyExpressionCreate": "new Date()",
                         "dataName": "DOCUMENT_UPLOADEDAT",
                         "dataNullable": "true",
@@ -691,6 +729,7 @@
             {
                 "properties": [
                     {
+                        "auditType": "NONE",
                         "dataAutoIncrement": "true",
                         "dataName": "AUDITLOG_ID",
                         "dataNullable": "true",
@@ -705,6 +744,7 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
+                        "auditType": "NONE",
                         "dataLength": "100",
                         "dataName": "AUDITLOG_ENTITYNAME",
                         "dataNullable": "false",
@@ -720,6 +760,7 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
+                        "auditType": "NONE",
                         "dataName": "AUDITLOG_ENTITYID",
                         "dataNullable": "true",
                         "dataType": "BIGINT",
@@ -733,6 +774,7 @@
                         "widgetType": "NUMBER"
                     },
                     {
+                        "auditType": "NONE",
                         "dataLength": "1",
                         "dataName": "AUDITLOG_OPERATION",
                         "dataNullable": "false",
@@ -748,6 +790,7 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
+                        "auditType": "NONE",
                         "dataName": "AUDITLOG_OLDVALUE",
                         "dataNullable": "true",
                         "dataType": "CLOB",
@@ -761,6 +804,7 @@
                         "widgetType": "TEXTAREA"
                     },
                     {
+                        "auditType": "NONE",
                         "dataName": "AUDITLOG_NEWVALUE",
                         "dataNullable": "true",
                         "dataType": "CLOB",
@@ -774,6 +818,7 @@
                         "widgetType": "TEXTAREA"
                     },
                     {
+                        "auditType": "NONE",
                         "calculatedPropertyExpressionCreate": "new Date()",
                         "dataName": "AUDITLOG_CREATEDAT",
                         "dataNullable": "true",
