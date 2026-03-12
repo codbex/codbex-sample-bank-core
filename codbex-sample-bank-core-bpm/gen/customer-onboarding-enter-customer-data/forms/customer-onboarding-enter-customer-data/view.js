@@ -5,11 +5,11 @@
  */
 const viewData = {
 	id: 'codbex-sample-bank-core-bpm-customer-onboarding-enter-customer-data',
-	label: 'codbex-sample-bank-core-bpm Form',
+	label: 'customer-onboarding-enter-customer-data Form',
 	translation: {
-		key: 'codbex-sample-bank-core-bpm:default.viewName',
+		key: 'codbex-sample-bank-core-bpm:customer-onboarding-enter-customer-data-form.default.viewName',
 		options: {
-			name: 'codbex-sample-bank-core-bpm',
+			name: 'customer-onboarding-enter-customer-data Form',
 		}
 	},
 	region: 'bottom',

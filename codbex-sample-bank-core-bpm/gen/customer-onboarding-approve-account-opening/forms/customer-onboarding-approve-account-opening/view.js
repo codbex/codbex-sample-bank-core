@@ -5,11 +5,11 @@
  */
 const viewData = {
 	id: 'codbex-sample-bank-core-bpm-customer-onboarding-approve-account-opening',
-	label: 'codbex-sample-bank-core-bpm Form',
+	label: 'customer-onboarding-approve-account-opening Form',
 	translation: {
-		key: 'codbex-sample-bank-core-bpm:default.viewName',
+		key: 'codbex-sample-bank-core-bpm:customer-onboarding-approve-account-opening-form.default.viewName',
 		options: {
-			name: 'codbex-sample-bank-core-bpm',
+			name: 'customer-onboarding-approve-account-opening Form',
 		}
 	},
 	region: 'bottom',

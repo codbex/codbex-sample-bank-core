@@ -7,16 +7,15 @@
         <link rel="icon" sizes="any" href="data:;base64,iVBORw0KGgo=">
 		<title config-title></title>
 		<script type="text/javascript" src="view.js"></script>
-		<script type="text/javascript" src="/services/js/platform-core/services/loader.js?id=view-js"></script>
-		<link type="text/css" rel="stylesheet" href="/services/js/platform-core/services/loader.js?id=view-css" />
+		<meta name="platform-links" category="ng-view">
 		<script type="text/javascript" src="controller.js"></script>
 	</head>
 
-	<body class="bk-vbox">
-		<bk-fieldset class="fd-margin--tiny" ng-form="forms.form">
+	<body class="bk-center--horizontal bk-box--items-start" ng-class="{'bk-padding':!_is_view}">
+		<bk-fieldset class="bk-padding bk-full-width bk-restrict-width--lg" ng-class="{'fd-card':!_is_view}" ng-style="!_is_view && { 'min-height': 'auto' }" ng-form="forms.form">
 			<bk-form-group>
 
-				<h3 bk-title header-size="3">{{ 'codbex-sample-bank-core-bpm:customer-onboarding-enter-customer-data-form.t.EnterCustomerData' | t:'Enter Customer Data' }}</h3>
+				<h3 bk-title header-size="3" >{{ 'codbex-sample-bank-core-bpm:customer-onboarding-enter-customer-data-form.t.EnterCustomerData' | t:'Enter Customer Data' }}</h3>
 				<bk-form-item horizontal="false">
 					<bk-form-label colon="true" ng-required="true" for="ie0d12970-cfa3-ee32-db9e-b9e9b57a9f42">{{ 'codbex-sample-bank-core-bpm:customer-onboarding-enter-customer-data-form.t.FirstName' | t:'First Name' }}</bk-form-label>
 					<bk-form-input-message state="{{ forms.form['ie0d12970-cfa3-ee32-db9e-b9e9b57a9f42'].$valid ? '' : 'error' }}" text="{{ 'codbex-sample-bank-core-bpm:customer-onboarding-enter-customer-data-form.t.Incorrectinput' | t:'Incorrect input' }}">
@@ -73,9 +72,7 @@
 					</bk-form-input-message>
 				</bk-form-item>
 				<img class="bk-contain-image" width="100%" height="98px" src="/services/web/resources/images/unknown.svg" alt="Image description"/>
-				<div>
-					<bk-button class="bk-full-width" type="submit" ng-disabled="!forms.form.$valid" label="{{ 'codbex-sample-bank-core-bpm:customer-onboarding-enter-customer-data-form.t.CreateCustomer' | t:'Create Customer' }}" compact="false" state="positive" ng-click="createCustomer()"></bk-button>
-				</div>
+				<bk-button class="bk-full-width" type="submit" ng-disabled="!forms.form.$valid" label="{{ 'codbex-sample-bank-core-bpm:customer-onboarding-enter-customer-data-form.t.CreateCustomer' | t:'Create Customer' }}" compact="false" state="positive" ng-click="createCustomer()"></bk-button>
 			</bk-form-group>
 		</bk-fieldset>
 		<theme></theme>

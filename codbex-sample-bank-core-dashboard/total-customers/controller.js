@@ -14,6 +14,5 @@ angular.module('total-customers', ['blimpKit', 'platformView']).controller('tota
         }, (error) => {
             $scope.totalCustomers = 'n/a';
             console.error(error);
-        }
-        );
+        });
 });
