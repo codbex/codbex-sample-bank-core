@@ -1,4 +1,4 @@
-import { Entity, Table, Id, Generated, Column, Documentation, CreatedAt, CreatedBy, UpdatedAt, UpdatedBy } from '@aerokit/sdk/db'
+import { Entity, Table, Id, Generated, Column, Documentation, CreatedAt, CreatedBy, UpdatedAt, UpdatedBy} from '@aerokit/sdk/db'
 
 @Entity('AccountEntity')
 @Table('SAMPLE_BANK_ACCOUNT')
@@ -102,7 +102,7 @@ export class AccountEntity {
         type: 'time',
         nullable: true,
     })
-    public updatedAt?: Date;
+    public updatedAt?: string;
 
 }
 

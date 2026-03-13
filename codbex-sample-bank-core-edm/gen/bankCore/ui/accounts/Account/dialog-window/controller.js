@@ -34,14 +34,8 @@ angular.module('page', ['blimpKit', 'platformView', 'platformLocale', 'EntitySer
 			if (params.entity.openedOn) {
 				params.entity.openedOn = new Date(params.entity.openedOn);
 			}
-			if (params.entity.lastAccessTime) {
-				params.entity.lastAccessTime = new Date(params.entity.lastAccessTime);
-			}
 			if (params.entity.createdAt) {
 				params.entity.createdAt = new Date(params.entity.createdAt);
-			}
-			if (params.entity.updatedAt) {
-				params.entity.updatedAt = new Date(params.entity.updatedAt);
 			}
 			$scope.entity = params.entity;
 			$scope.selectedMainEntityKey = params.selectedMainEntityKey;

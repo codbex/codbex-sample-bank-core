@@ -59,14 +59,8 @@ angular.module('page', ['blimpKit', 'platformView', 'platformLocale', 'EntitySer
 				if (data.entity.openedOn) {
 					data.entity.openedOn = new Date(data.entity.openedOn);
 				}
-				if (data.entity.lastAccessTime) {
-					data.entity.lastAccessTime = new Date(data.entity.lastAccessTime);
-				}
 				if (data.entity.createdAt) {
 					data.entity.createdAt = new Date(data.entity.createdAt);
-				}
-				if (data.entity.updatedAt) {
-					data.entity.updatedAt = new Date(data.entity.updatedAt);
 				}
 				$scope.entity = data.entity;
 				$scope.optionscustomerId = data.optionscustomerId;
@@ -85,14 +79,8 @@ angular.module('page', ['blimpKit', 'platformView', 'platformLocale', 'EntitySer
 				if (data.entity.openedOn) {
 					data.entity.openedOn = new Date(data.entity.openedOn);
 				}
-				if (data.entity.lastAccessTime) {
-					data.entity.lastAccessTime = new Date(data.entity.lastAccessTime);
-				}
 				if (data.entity.createdAt) {
 					data.entity.createdAt = new Date(data.entity.createdAt);
-				}
-				if (data.entity.updatedAt) {
-					data.entity.updatedAt = new Date(data.entity.updatedAt);
 				}
 				$scope.entity = data.entity;
 				$scope.optionscustomerId = data.optionscustomerId;

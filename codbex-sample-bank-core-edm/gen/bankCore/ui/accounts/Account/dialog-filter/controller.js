@@ -13,23 +13,11 @@ angular.module('page', ['blimpKit', 'platformView', 'platformLocale']).controlle
 		if (params?.entity?.openedOnTo) {
 			params.entity.openedOnTo = new Date(params.entity.openedOnTo);
 		}
-		if (params?.entity?.lastAccessTimeFrom) {
-			params.entity.lastAccessTimeFrom = new Date(params.entity.lastAccessTimeFrom);
-		}
-		if (params?.entity?.lastAccessTimeTo) {
-			params.entity.lastAccessTimeTo = new Date(params.entity.lastAccessTimeTo);
-		}
 		if (params?.entity?.createdAtFrom) {
 			params.entity.createdAtFrom = new Date(params.entity.createdAtFrom);
 		}
 		if (params?.entity?.createdAtTo) {
 			params.entity.createdAtTo = new Date(params.entity.createdAtTo);
-		}
-		if (params?.entity?.updatedAtFrom) {
-			params.entity.updatedAtFrom = new Date(params.entity.updatedAtFrom);
-		}
-		if (params?.entity?.updatedAtTo) {
-			params.entity.updatedAtTo = new Date(params.entity.updatedAtTo);
 		}
 		$scope.entity = params.entity ?? {};
 		$scope.selectedMainEntityKey = params.selectedMainEntityKey;
@@ -83,12 +71,8 @@ angular.module('page', ['blimpKit', 'platformView', 'platformLocale']).controlle
 			const condition = { propertyName: 'openedOn', operator: 'LE', value: entity.openedOnTo };
 			filter.$filter.conditions.push(condition);
 		}
-		if (entity.lastAccessTimeFrom) {
-			const condition = { propertyName: 'lastAccessTime', operator: 'GE', value: entity.lastAccessTimeFrom };
-			filter.$filter.conditions.push(condition);
-		}
-		if (entity.lastAccessTimeTo) {
-			const condition = { propertyName: 'lastAccessTime', operator: 'LE', value: entity.lastAccessTimeTo };
+		if (entity.lastAccessTime) {
+			const condition = { propertyName: 'lastAccessTime', operator: 'LIKE', value: `%${entity.lastAccessTime}%` };
 			filter.$filter.conditions.push(condition);
 		}
 		if (entity.createdAtFrom) {
@@ -99,12 +83,8 @@ angular.module('page', ['blimpKit', 'platformView', 'platformLocale']).controlle
 			const condition = { propertyName: 'createdAt', operator: 'LE', value: entity.createdAtTo };
 			filter.$filter.conditions.push(condition);
 		}
-		if (entity.updatedAtFrom) {
-			const condition = { propertyName: 'updatedAt', operator: 'GE', value: entity.updatedAtFrom };
-			filter.$filter.conditions.push(condition);
-		}
-		if (entity.updatedAtTo) {
-			const condition = { propertyName: 'updatedAt', operator: 'LE', value: entity.updatedAtTo };
+		if (entity.updatedAt) {
+			const condition = { propertyName: 'updatedAt', operator: 'LIKE', value: `%${entity.updatedAt}%` };
 			filter.$filter.conditions.push(condition);
 		}
 		Dialogs.postMessage({ topic: 'codbex-sample-bank-core-edm.accounts.Account.entitySearch', data: {

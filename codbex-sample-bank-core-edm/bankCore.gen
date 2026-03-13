@@ -683,8 +683,9 @@
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "time",
-          "dataTypeTypescript": "Date",
-          "isDateType": true,
+          "dataTypeTypescript": "string",
+          "minLength": 0,
+          "maxLength": 0,
           "inputRule": ""
         },
         {
@@ -739,8 +740,9 @@
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "time",
-          "dataTypeTypescript": "Date",
-          "isDateType": true,
+          "dataTypeTypescript": "string",
+          "minLength": 0,
+          "maxLength": 0,
           "inputRule": ""
         }
       ],
@@ -1008,8 +1010,9 @@
             "widgetDropdownUrl": "",
             "widgetDropdownControllerUrl": "",
             "dataTypeJava": "time",
-            "dataTypeTypescript": "Date",
-            "isDateType": true,
+            "dataTypeTypescript": "string",
+            "minLength": 0,
+            "maxLength": 0,
             "inputRule": ""
           }
         ]

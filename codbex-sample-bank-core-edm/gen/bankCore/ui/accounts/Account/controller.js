@@ -106,14 +106,8 @@ angular.module('page', ['blimpKit', 'platformView', 'platformLocale', 'EntitySer
 						if (e.openedOn) {
 							e.openedOn = new Date(e.openedOn);
 						}
-						if (e.lastAccessTime) {
-							e.lastAccessTime = new Date(e.lastAccessTime);
-						}
 						if (e.createdAt) {
 							e.createdAt = new Date(e.createdAt);
-						}
-						if (e.updatedAt) {
-							e.updatedAt = new Date(e.updatedAt);
 						}
 					});
 
