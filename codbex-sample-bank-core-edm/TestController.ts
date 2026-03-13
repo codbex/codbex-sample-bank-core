@@ -17,9 +17,9 @@ interface ResetData {
 }
 
 @Controller
-@Documentation('codbex-sample-bank-core-edm - Bank Core Controller')
+@Documentation('codbex-sample-bank-core-edm - Test Controller')
 @Injected()
-class BankCoreController {
+class TestController {
 
     @Inject('CustomerRepository')
     private readonly customerRepository!: CustomerRepository;
@@ -53,6 +53,7 @@ class BankCoreController {
     @Documentation('Test Customers CRUD')
     public testCustomers(_: any, _ctx: any): CustomerEntity[] {
         this.testResetData(_, _ctx);
+
         // Create – minimal (defaults + calculated fields)
         const customerId = this.customerRepository.create({
             customerNumber: `CUST-${UUID.random().substring(0, 8).toUpperCase()}`,
@@ -109,7 +110,6 @@ class BankCoreController {
     @Documentation('Test Accounts CRUD')
     public testAccounts(_: any, _ctx: any): AccountEntity[] {
         this.testResetData(_, _ctx);
-
         const customers = this.testCustomers(_, _ctx);
 
         // Create – default-heavy
