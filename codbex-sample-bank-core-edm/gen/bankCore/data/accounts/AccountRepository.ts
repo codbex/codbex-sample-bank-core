@@ -1,4 +1,4 @@
-import { Repository, EntityEvent, EntityConstructor } from '@aerokit/sdk/db'
+import { Repository, EntityEvent, EntityConstructor, Options } from '@aerokit/sdk/db'
 import { Component } from '@aerokit/sdk/component'
 import { Producer } from '@aerokit/sdk/messaging'
 import { Extensions } from '@aerokit/sdk/extensions'
@@ -9,6 +9,24 @@ export class AccountRepository extends Repository<AccountEntity> {
 
     constructor() {
         super((AccountEntity as EntityConstructor));
+    }
+
+    public override findById(id: string | number, options?: Options): AccountEntity | undefined {
+        const entity = super.findById(id, options);
+        if (entity) {
+            entity.openedOn = entity.openedOn ? new Date(entity.openedOn) : undefined;
+            entity.createdAt = entity.createdAt ? new Date(entity.createdAt) : undefined;
+        }
+        return entity;
+    }
+
+    public override findAll(options?: Options): AccountEntity[] {
+        const entities = super.findAll(options);
+        entities.forEach(entity => {
+            entity.openedOn = entity.openedOn ? new Date(entity.openedOn) : undefined;
+            entity.createdAt = entity.createdAt ? new Date(entity.createdAt) : undefined;
+        });
+        return entities;
     }
 
     public override create(entity: AccountEntity): string | number {

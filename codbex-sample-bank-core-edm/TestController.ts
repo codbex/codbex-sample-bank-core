@@ -114,9 +114,6 @@ class TestController {
         // Update – triggers OnUpdate
         customer.riskScore = 15.2;
         customer.profileNotes = 'Updated risk after AML review';
-        customer.createdAt = new Date(); // TODO: This fixes the update issue
-        customer.updatedAt = new Date(); // TODO: This fixes the update issue
-        customer.dateOfBirth = new Date(); // TODO: This fixes the update issue
         this.customerRepository.update(customer);
 
         // Query
@@ -173,10 +170,6 @@ class TestController {
         // Update
         account.balance! += 1234.56;
         account.status = 0;
-        account.createdAt = new Date(); // TODO: This fixes the update issue
-        account.updatedAt = new Date(); // TODO: This fixes the update issue
-        account.lastAccessTime = new Date(); // TODO: This fixes the update issue
-        account.openedOn = new Date(); // TODO: This fixes the update issue
         this.accountRepository.update(account);
 
         // Query
@@ -231,7 +224,6 @@ class TestController {
 
         // Update
         transaction.approved = false;
-        transaction.createdOn = new Date(); // TODO: This fixes the update issue
         this.transactionRepository.update(transaction);
 
         // Query
@@ -275,7 +267,6 @@ class TestController {
 
         // Update
         document.fileName = 'passport-document.pdf';
-        document.uploadedAt = new Date(); // TODO: This fixes the update issue
         this.documentRepository.update(document);
 
 
