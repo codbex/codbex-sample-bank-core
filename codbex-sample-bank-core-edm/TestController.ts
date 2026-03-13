@@ -158,7 +158,7 @@ class TestController {
             balance: 50000.75,
             overdraftLimit: 10000.00,
             status: 1,
-            lastAccessTime: new Date('14:35:00')
+            lastAccessTime: '14:35:00'
         });
 
         // Read
